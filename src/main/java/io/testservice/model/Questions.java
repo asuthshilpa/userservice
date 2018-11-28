@@ -11,12 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.TableGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Questions {
 	@TableGenerator(name = "Quest_Gen", initialValue = 2)
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "Quest_Gen")
-	
+	@JsonIgnore
 	int id;
 
 	String question;
